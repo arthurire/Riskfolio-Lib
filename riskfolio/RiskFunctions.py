@@ -561,9 +561,10 @@ def DaR_Abs(X, alpha=0.05):
     value = np.array(value).item()
 
     return value
+def CDaR_Abs(X,alpha=0.05):
+    return (CDaR_Abs_Oneside(X,alpha)+CDaR_Abs_Oneside(-X,alpha))/2
 
-
-def CDaR_Abs(X, alpha=0.05):
+def CDaR_Abs_Oneside(X, alpha=0.05):
     r"""
     Calculate the Conditional Drawdown at Risk (CDaR) of a returns series
     using uncumpounded cumulative returns.
